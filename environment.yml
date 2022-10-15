@@ -1,13 +1,33 @@
-name: example-environment
+name: binder-environment
 channels:
   - conda-forge
 dependencies:
+  # Enforce Python version
+  - python=3.9
+
+  # Scientific python
+  - networkx
   - numpy
-  - psutil
-  - toolz
-  - matplotlib
-  - dill
+  - openpyxl
   - pandas
-  - partd
-  - bokeh
-  - dask
+  - scipy
+
+  # Plotting
+  - ipympl
+  - matplotlib-base
+  - plotly
+  - seaborn
+
+  # Machine learning
+  - scikit-learn
+
+  # Chemistry
+  - mordred
+  - rdkit
+
+  # Install some things through pip
+  - pip
+  - pip:
+    # Materials Project
+    - mp_api
+    - mpcontribs-client
